@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    text-align: center; /* 全局文本居中对齐 */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.hero img {
+    width: 33%;
+    height: auto;
+}
+
+.best-albums {
+    text-align: center;
+    padding: 20px;
+}
+
+.best-albums h2 {
+    margin-bottom: 20px;
+}
+
+/* 专辑网格布局，4列布局，固定间距 */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 220px); /* 4列布局，每列220px宽 */
+    gap: 20px; /* 每个专辑项之间的固定间距 */
+    justify-content: center; /* 居中对齐整个网格 */
+    padding: 20px;
+}
+
+.album-item {
+    width: 220px; /* 保持专辑项固定宽度 */
+    text-align: center;
+}
+
+.album-item img {
+    width: 100%;
+    height: auto;
+}
+
+.album-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.album-item span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 响应式设计：当屏幕宽度小于768px时，调整为2列布局 */
+@media (max-width: 768px) {
+    .album-grid {
+        grid-template-columns: repeat(2, 220px); /* 小屏幕下两列布局 */
+    }
+}
+
+/* 响应式设计：当屏幕宽度小于480px时，调整为单列布局 */
+@media (max-width: 480px) {
+    .album-grid {
+        grid-template-columns: 1fr; /* 更小的屏幕下单列布局 */
+    }
+}
+
+/* 更新后的 Featured Albums 样式 */
+.featured-albums {
+    display: flex;
+    flex-direction: column; /* 专辑竖直排列 */
+    align-items: center; /* 整体居中对齐 */
+    padding: 20px;
+}
+
+.featured-item {
+    display: flex;
+    flex-direction: row; /* 专辑封面和文字水平排列 */
+    justify-content: flex-start; /* 内容左对齐 */
+    align-items: flex-start; /* 确保专辑名与图片顶部对齐 */
+    margin: 40px 0;
+    width: 100%;
+    max-width: 1000px; /* 控制整体内容宽度，确保居中 */
+}
+
+.featured-item img {
+    width: 350px; /* 调整封面图片的宽度 */
+    height: auto;
+    margin-right: 20px; /* 图片和文字之间的间距 */
+}
+
+.album-info {
+    max-width: 500px; /* 控制文字部分的最大宽度 */
+    text-align: left; /* 保持文字靠左对齐 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 让专辑名在顶部，段落在底部 */
+}
+
+.album-info .title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 让专辑名和乐队名与图片顶部对齐 */
+}
+
+.album-info h3 {
+    font-size: 28px;
+    margin-bottom: 0; /* 移除专辑名的下边距 */
+}
+
+.album-info span {
+    font-size: 16px;
+    color: #666;
+}
+
+.album-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: auto; /* 使段落内容对齐到图片底部 */
+    margin-bottom: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.footer-logo img {
+    margin-top: 40px;
+    height: 50px;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 40px;
+}
+
+.divider {
+    border: none; /* 移除默认边框 */
+    border-top: 1px solid #333; /* 顶部边框设置为2px的实线 */
+    margin: 10px auto; /* 上下间距 */
+    width: 50%; /* 横线宽度 */
+    max-width: 500px; /* 横线的最大宽度 */
+}
+
+.title {
+    display: flex;
+    justify-content: space-between; /* 将标题和按钮分布在两端 */
+    align-items: center; /* 垂直居中对齐 */
+    max-width: 1000px; 
+    padding: 20px;
+     margin: 0 auto;
+    text-align: left; /* 保持标题文字靠左对齐 */
+}
+
+.title h2 {
+    font-size: 36px;
+    margin: 0; /* 移除默认的外边距 */
+}
+
+.more-button {
+    padding: 10px 20px; /* 调整按钮的内边距 */
+    background-color: black; /* 背景颜色设为黑色 */
+    color: white; /* 按钮文字颜色为白色 */
+    border: none; /* 移除默认边框 */
+    cursor: pointer; /* 鼠标悬停时的指针 */
+    font-size: 16px; /* 按钮字体大小 */
+    font-family: Arial, sans-serif; /* 使用字体 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+}
+
+.more-button:hover {
+    background-color: #333; /* 鼠标悬停时按钮背景变为深灰色 */
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5); /* 悬停时阴影加深 */
+
+.album-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* 添加平滑过渡效果 */
+}
+
+.album-item img:hover {
+    transform: scale(1.1); /* 悬停时放大 1.1 倍 */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alata', sans-serif; /* 全局应用Alata字体 */
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    text-align: center; /* 全局文本居中对齐 */
+}
